@@ -1,0 +1,35 @@
+# config.py contains API keys — never commit it
+config.py
+
+# Large data files — use git-lfs or exclude from repo
+data/us_cases.json
+data/us_cases_llm.json
+data/cn_medical_cases.json
+
+# Keep gold_cases.json (small, final output) in the repo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
