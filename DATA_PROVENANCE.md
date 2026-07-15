@@ -25,7 +25,8 @@
 
 | 文件 | 上传 | 说明 |
 |------|------|------|
-| `data/selected_cases.json`、`data/case_database.json` | ✅ | 25 例精选案例（已脱敏） |
+| `data/case_database.json` | ✅ | 25 例 OLD CARTS 结构化精选（含 `final_diagnosis` 金标准，实验用 gold 集） |
+| `data/selected_cases.json` | ✅ | 21 例代表性脱敏精选（不同 schema，无 OLD CARTS 结构） |
 | `data/cn_medical_cases_deidentified.json` | ✅ | 612 例，已去标识化 |
 | `data/us_cases_deidentified.json` | ✅ | 490 例，`full_text` 已删、仅留 `source_url` |
 | `data/cn_medical_cases.json`（原始） | ❌ | 被 `.gitignore` 排除 |

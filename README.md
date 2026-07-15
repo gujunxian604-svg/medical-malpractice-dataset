@@ -10,7 +10,7 @@ set of representative cases for clinical AI evaluation research.
 Step 1: Download US cases       (CourtListener API)
 Step 2: Extract with LLM         (DeepSeek V3)
 Step 3: Merge US + CN data       (CN data manually extracted)
-Step 4: Filter + select 30 representative cases (proportional + balanced)
+Step 4: Filter + select representative cases (proportional + balanced; script default --count 30)
 ```
 
 ## Quick Start
@@ -26,9 +26,9 @@ cp config.example.py config.py
 # 3. Run the full pipeline
 python src/download_hybrid.py --count 500
 python src/extract_with_llm.py
-python src/select_cases.py --count 30
+python src/select_cases.py --count 21   # committed selected_cases.json = 21 (script default --count is 30)
 
-# 4. Result: data/selected_cases.json (30 cases)
+# 4. Result: data/selected_cases.json — 21 representative de-identified cases (committed; script default --count is 30)
 ```
 
 ## Data Sources
@@ -80,9 +80,10 @@ medical-malpractice-dataset/
 │   ├── extract_with_llm.py     # Step 2: LLM extraction (DeepSeek V3)
 │   ├── extract_fields.py       # Regex-based field extraction (Step 1 alt)
 │   ├── extract_us_cases.py     # API-only downloader (Step 1 alt)
-│   └── select_cases.py    # Step 4: Select 30 cases
+│   └── select_cases.py    # Step 4: Select representative cases (default --count 30; committed set = 21)
 ├── data/
-│   ├── selected_cases.json         # Final 30 cases (committed)
+│   ├── selected_cases.json         # 21 representative de-identified cases (committed)
+│   ├── case_database.json          # 25 OLD CARTS structured gold cases (experiment set; all with final_diagnosis)
 │   ├── us_cases.json           # Raw US download (gitignored, ~18MB)
 │   ├── us_cases_llm.json       # LLM-extracted US (gitignored)
 │   └── cn_medical_cases.json   # CN cases (gitignored)
