@@ -1,118 +1,66 @@
 # Medical Malpractice Case Dataset
 
-A reproducible pipeline for extracting structured medical malpractice cases
-from US court opinions and Chinese court judgments, then selecting a balanced
-set of representative cases for clinical AI evaluation research.
+This repository contains the data materials for a clinical dialogue experiment using de-identified medical-malpractice cases derived from publicly accessible court judgments.
 
-## Pipeline Overview
+## Formal experimental sample
 
-```
-Step 1: Download US cases       (CourtListener API)
-Step 2: Extract with LLM         (DeepSeek V3)
-Step 3: Merge US + CN data       (CN data manually extracted)
-Step 4: Filter + select representative cases (proportional + balanced; script default --count 30)
-```
+The formal sample contains **25 cases selected on the basis of data availability and structural usability**. It is not a jurisdiction-balanced sample:
 
-## Quick Start
+- China: 24 cases
+- United States: 1 case
 
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
+The sample must not be used for China–US comparisons or interpreted as representative of either jurisdiction. Cases span eight prespecified broad clinical categories. These categories are study-specific groupings, not a complete or official WHO ICD-11 classification.
 
-# 2. Copy config template and add your API keys
-cp config.example.py config.py
-# Edit config.py with your CourtListener + DeepSeek keys
+One ophthalmology case (CAS19) falls outside those eight categories and is labelled `Other/Ophthalmology`. It remains in the overall experiment but is excluded from analyses stratified by the eight prespecified categories unless the analysis plan is amended transparently.
 
-# 3. Run the full pipeline
-python src/download_hybrid.py --count 500
-python src/extract_with_llm.py
-python src/select_cases.py --count 21   # committed selected_cases.json = 21 (script default --count is 30)
+## Files
 
-# 4. Result: data/selected_cases.json — 21 representative de-identified cases (committed; script default --count is 30)
-```
+```text
+data/
+├── case_database.json
+│   Full curation record for the 25 formal cases. Contains outcome information
+│   and MUST NOT be supplied directly to a patient-simulation model.
+├── formal/
+│   ├── case_payloads.json
+│   │   Model-facing, patient-knowable fields only.
+│   ├── gold_labels_draft.json
+│   │   Draft scoring-side labels. Primary diagnoses and accepted synonyms
+│   │   require clinician verification before the formal experiment.
+│   └── source_manifest.csv
+│       Provenance checklist; stable source identifiers/URLs remain to be added.
+├── cn_medical_cases_deidentified.json
+│   Supporting Chinese candidate pool; not the formal experimental sample.
+└── us_cases_deidentified.json
+    Supporting US candidate pool; not the formal experimental sample.
 
-## Data Sources
-
-| Source | Method | Cases | Period |
-|--------|--------|-------|--------|
-| US (CourtListener API) | Automated (this code) | 490 | 2025-01-01 to 2026-01-01 |
-| China (裁判文书网) | Manual extraction | 612 | 2025-01-01 to 2026-01-01 |
-
-## JSON Schema (8 Fields)
-
-```json
-{
-  "case_metadata": {
-    "title": "Case title",
-    "document_type": "Civil Judgment Document"
-  },
-  "clinical_facts": {
-    "patient_demographics": "e.g., female, 56 years old",
-    "primary_complaint": "Initial symptoms",
-    "misdiagnosed_condition": "What was misdiagnosed",
-    "final_correct_diagnosis": "Confirmed diagnosis (MeSH)"
-  },
-  "organ_system_mapping": {
-    "primary_system": "One of 8 WHO ICD-11 systems"
-  },
-  "malpractice_details": {
-    "diagnostic_error_type": "misdiagnosis | missed | delayed",
-    "expert_appraisal_summary": "What went wrong"
-  }
-}
+archive/legacy/
+└── selected_cases.json
+    Legacy 21-case intermediate selection. Not used in the formal experiment.
 ```
 
-**Rules:** Never use "N/A" — use "Unknown". `primary_system` must be one of:
-Cardiovascular, Respiratory, Digestive, Neuropsychiatric, Urinary,
-Endocrine, Reproductive, Musculoskeletal.
+## Leakage prevention
 
-## Project Structure
+The dialogue platform must read only `data/formal/case_payloads.json` when constructing patient-model context. It must never load `data/case_database.json` or `data/formal/gold_labels_draft.json` into the patient or physician model context.
 
-```
-medical-malpractice-dataset/
-├── README.md
-├── config.example.py       # Template — copy to config.py
-├── config.py               # Your keys (gitignored)
-├── requirements.txt
-├── .gitignore
-├── src/
-│   ├── download_hybrid.py      # Step 1: Download US cases via API
-│   ├── extract_with_llm.py     # Step 2: LLM extraction (DeepSeek V3)
-│   ├── extract_fields.py       # Regex-based field extraction (Step 1 alt)
-│   ├── extract_us_cases.py     # API-only downloader (Step 1 alt)
-│   └── select_cases.py    # Step 4: Select representative cases (default --count 30; committed set = 21)
-├── data/
-│   ├── selected_cases.json         # 21 representative de-identified cases (committed)
-│   ├── case_database.json          # 25 OLD CARTS structured gold cases (experiment set; all with final_diagnosis)
-│   ├── us_cases.json           # Raw US download (gitignored, ~18MB)
-│   ├── us_cases_llm.json       # LLM-extracted US (gitignored)
-│   └── cn_medical_cases.json   # CN cases (gitignored)
-└── docs/
-    └── extraction_logic.md     # Detailed extraction rules
-```
+Prompt instructions such as “do not reveal the diagnosis” are not an adequate substitute for this separation: information already present in model context may still influence generated dialogue even when it is not reproduced verbatim.
 
-## Case Selection Algorithm
+Gold labels must be accessed only after dialogue generation by the scoring and analysis components.
 
-The selection in `select_cases.py` works as follows:
+## Required clinical review before data collection
 
-1. **Filter** — keep only cases where all 8 fields have non-"Unknown" values
-   AND `primary_system` is one of the 8 WHO ICD-11 systems
-   AND `diagnostic_error_type` is misdiagnosis/missed/delayed
+The file `gold_labels_draft.json` intentionally leaves `primary_gold_diagnosis` unset. A qualified clinician must review every case and provide:
 
-2. **Intersect** — US and CN cases are normalized to the same schema,
-   then combined into one candidate pool
+1. one canonical primary diagnosis;
+2. accepted diagnostic synonyms or equivalent terms;
+3. secondary diagnoses, when applicable;
+4. confirmation of organ-system and diagnostic-error labels.
 
-3. **Allocate** — seats distributed proportionally by source volume
-   using the largest remainder method (ensures fair rounding)
+After review, save the frozen result as `gold_labels.json`, record the version or commit hash in the protocol, and do not alter it after formal generation begins except through a documented amendment.
 
-4. **Balance** — within each source, cases selected via round-robin
-   across (organ_system × error_type) cells for diversity
+## Archived material
 
-## API Keys Needed
+The previous 21-case selection and the earlier extraction code were removed from the active dataset because they do not define the formal 25-case experiment. Experimental platform code, prompts, internal-model measurement code, rating instruments, and statistical analysis code will be maintained in a separate experiment repository.
 
-- **CourtListener** (free): https://www.courtlistener.com/profile/api-token/
-- **DeepSeek** (paid, ~$0.002/case): https://platform.deepseek.com/
+## Data provenance and use
 
-## License
-
-CourtListener data: CC-BY-NC-SA 4.0
+See [DATA_PROVENANCE.md](DATA_PROVENANCE.md) and [docs/dataset_construction.md](docs/dataset_construction.md). The repository does not currently grant a blanket licence for the underlying court materials. Users must verify applicable source terms and legal, ethical, and institutional requirements before reuse.

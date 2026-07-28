@@ -1,25 +1,16 @@
-# config.py contains API keys — never commit it
+# Never commit credentials or local secrets
+.env
+.env.*
 config.py
 
-# Large data files — use git-lfs or exclude from repo
+# Source court-text files containing full records are not distributed here
 data/us_cases.json
 data/us_cases_llm.json
 data/cn_medical_cases.json
 
-# Keep gold_cases.json (small, final output) in the repo
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.egg-info/
-dist/
-build/
-
-# Virtual environments
-venv/
-env/
-.venv/
+# Temporary files and logs
+*.log
+*.tmp
 
 # IDE
 .vscode/
@@ -30,6 +21,3 @@ env/
 # OS
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log

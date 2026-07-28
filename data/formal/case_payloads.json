@@ -1,0 +1,527 @@
+﻿[
+    {
+        "case_id":  "CAS01",
+        "patient_demographics":  {
+                                     "age":  "Unknown",
+                                     "sex":  "female",
+                                     "occupation":  "市民"
+                                 },
+        "old_carts":  {
+                          "onset":  "2016年分娩后逐渐出现，2020年就诊时主诉会阴侧切处肿胀、疼痛不适4年",
+                          "location":  "会阴侧切处 (perineal episiotomy site)",
+                          "duration":  "4年 (4 years)",
+                          "character":  "肿胀、疼痛 (swelling and pain)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "进行性 (progressive)",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "2016年巨大儿经会阴侧切顺产",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS02",
+        "patient_demographics":  {
+                                     "age":  "34",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "Unknown (symptoms of low back pain led to initial visit)",
+                          "location":  "Lower back (腰), cauda equina region",
+                          "duration":  "Chronic (post-surgical permanent deficits)",
+                          "character":  "Low back pain (腰痛); post-surgery: inability to urinate/defecate (大、小便不能自解)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Constant (post-surgery persistent urinary and bowel dysfunction)",
+                          "severity":  "Severe (七级伤残, permanent neurogenic bladder/bowel)"
+                      },
+        "past_medical_history":  "Unknown (no prior conditions mentioned)",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS03",
+        "patient_demographics":  {
+                                     "age":  "52",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "Two months ago, without obvious cause",
+                          "location":  "Urinary tract (gross hematuria)",
+                          "duration":  "Two months",
+                          "character":  "Gross hematuria (visible blood in urine)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Unknown",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS04",
+        "patient_demographics":  {
+                                     "age":  "52",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "Acute onset after traffic accident",
+                          "location":  "Left upper extremity (left elbow and distal humerus)",
+                          "duration":  "Chronic, persisting for months post-surgery",
+                          "character":  "Persistent swelling and pain (持续性肿痛) at left elbow",
+                          "aggravating_factors":  "Movement or weight-bearing on left arm",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Constant, worsening over time",
+                          "severity":  "Moderate to severe (based on need for revision surgery)"
+                      },
+        "past_medical_history":  "Traffic accident causing left humeral distal comminuted fracture",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS05",
+        "patient_demographics":  {
+                                     "age":  "Unknown",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "3 hours before first admission (traffic accident); second admission due to abdominal pain and hematemesis (acute onset)",
+                          "location":  "Left knee, left lower leg, right ankle (initial); abdomen (later)",
+                          "duration":  "Ongoing from accident to death",
+                          "character":  "Bleeding, swelling, deformity (initial); abdominal pain, hematemesis (later)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Continuous initially; intermittent later (abdominal pain, hematemesis)",
+                          "severity":  "Severe (shock, life-threatening)"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS06",
+        "patient_demographics":  {
+                                     "age":  "57",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "Unknown (symptoms of varicose veins likely chronic; acute event of pulmonary embolism sudden)",
+                          "location":  "bilateral lower extremities (varicose veins), left calf (deep vein thrombosis), chest (pulmonary embolism)",
+                          "duration":  "Unknown (varicose veins chronic; postoperative DVT and PE acute)",
+                          "character":  "Unknown (varicose veins: dilated, tortuous veins; DVT: possibly swelling, pain; PE: sudden collapse)",
+                          "aggravating_factors":  "Unknown (surgery likely aggravated DVT risk)",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown (PE may cause chest pain radiating to back or shoulders)",
+                          "temporal_pattern":  "Intermittent (varicose veins); acute onset (PE)",
+                          "severity":  "Severe (fatal pulmonary embolism)"
+                      },
+        "past_medical_history":  "Bilateral great saphenous vein varicosities with superficial venous thrombosis",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS07",
+        "patient_demographics":  {
+                                     "age":  "Unknown",
+                                     "sex":  "male",
+                                     "occupation":  "farmer (农民)"
+                                 },
+        "old_carts":  {
+                          "onset":  "Unknown (initial surgery for fracture, then chronic osteomyelitis developed postoperatively)",
+                          "location":  "left calcaneus (左跟骨)",
+                          "duration":  "chronic (postoperative, ongoing)",
+                          "character":  "non-healing wound, sinus tract formation (切口愈合不良，窦道形成)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "persistent (窦道未愈合)",
+                          "severity":  "severe (十级伤残)"
+                      },
+        "past_medical_history":  "Left tibial and calcaneal fractures, status post internal fixation",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS08",
+        "patient_demographics":  {
+                                     "age":  "61",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "6 months ago",
+                          "location":  "left lower limb",
+                          "duration":  "6 months",
+                          "character":  "pain and numbness",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Unknown",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS09",
+        "patient_demographics":  {
+                                     "age":  "37",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "1 day before admission (irregular abdominal pain after 39+2 weeks of gestation)",
+                          "location":  "Lower abdomen (uterine region)",
+                          "duration":  "1 day (irregular pain) then acute postpartum hemorrhage",
+                          "character":  "Irregular abdominal pain (labor pains), then severe postpartum hemorrhage",
+                          "aggravating_factors":  "Delivery, uterine contractions",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Intermittent (labor pains) then constant (hemorrhage)",
+                          "severity":  "Severe (life-threatening hemorrhage, shock)"
+                      },
+        "past_medical_history":  "Gravida 6, para 3; multiple pregnancies and abortions; uterine fibroids (较大子宫肌瘤); high-risk factors for uterine rupture (高龄、多次妊娠流产等肌纤维变薄菲薄).",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS10",
+        "patient_demographics":  {
+                                     "age":  "53",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "4 years ago",
+                          "location":  "uterus",
+                          "duration":  "4 years",
+                          "character":  "uterine fibroids (子宫肌瘤)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "chronic",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "Uterine fibroids for 4 years",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS11",
+        "patient_demographics":  {
+                                     "age":  "58",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "Unknown (symptoms progressed rapidly)",
+                          "location":  "throat, respiratory system",
+                          "duration":  "Unknown (acute progression)",
+                          "character":  "fatigue, sore throat, dyspnea, high fever (39.5°C), inability to speak",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "progressive worsening",
+                          "severity":  "severe (life-threatening)"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS12",
+        "patient_demographics":  {
+                                     "age":  "55",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "3 months ago",
+                          "location":  "face (floating), stomach (pain)",
+                          "duration":  "3 months, worsening for 1 week",
+                          "character":  "fatigue, poor appetite, facial edema, stomach pain",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "progressive, worsening over time",
+                          "severity":  "moderate to severe"
+                      },
+        "past_medical_history":  "Unknown (inaccurate records noted)",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS13",
+        "patient_demographics":  {
+                                     "age":  "69",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "2 hours after falling from bicycle",
+                          "location":  "left knee and left ankle",
+                          "duration":  "2 hours at presentation, later became chronic",
+                          "character":  "swelling and pain",
+                          "aggravating_factors":  "weight-bearing, movement",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "constant initially, then persistent",
+                          "severity":  "severe (led to disability)"
+                      },
+        "past_medical_history":  "gastric ulcer, liver cirrhosis (mentioned as unrelated to the case)",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS14",
+        "patient_demographics":  {
+                                     "age":  "79",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "5 years ago (recurrent), with acute worsening 2 weeks prior to admission",
+                          "location":  "Chest (胸闷), head (意识障碍)",
+                          "duration":  "5 years (chronic), acute worsening for 2 weeks",
+                          "character":  "Chest tightness (胸闷), altered consciousness (意识障碍)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Recurrent episodes over 5 years, with recent persistent worsening",
+                          "severity":  "Severe (led to death)"
+                      },
+        "past_medical_history":  "Coronary artery disease, paroxysmal atrial fibrillation, hypertension (grade 3, very high risk), pneumonia, renal insufficiency, secondary thrombocytopenia",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS15",
+        "patient_demographics":  {
+                                     "age":  "62",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "1 day before admission",
+                          "location":  "right lower quadrant abdomen",
+                          "duration":  "1 day",
+                          "character":  "persistent pain",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "constant",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "Type 2 diabetes mellitus, dilated cardiomyopathy (NYHA class IV)",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS16",
+        "patient_demographics":  {
+                                     "age":  "38",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "After continuous infusion treatment for cold",
+                          "location":  "Generalized (全身乏力), throat (咽干), stomach (胃胀满)",
+                          "duration":  "Unknown",
+                          "character":  "Weakness, mild dry throat, stomach fullness",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Progressive worsening",
+                          "severity":  "Severe (leading to death)"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS17",
+        "patient_demographics":  {
+                                     "age":  "newborn (34 weeks + 6 days premature)",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "43 minutes after birth",
+                          "location":  "Respiratory system (cyanosis, moaning, frothy sputum)",
+                          "duration":  "43 minutes at presentation, then progressive",
+                          "character":  "Cyanosis, intermittent moaning, frothy sputum, respiratory distress",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Continuous and progressive",
+                          "severity":  "Severe (life-threatening)"
+                      },
+        "past_medical_history":  "Premature birth (34 weeks + 6 days), low birth weight",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS18",
+        "patient_demographics":  {
+                                     "age":  "49",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "2 days ago",
+                          "location":  "generalized (diarrhea, fatigue)",
+                          "duration":  "2 days",
+                          "character":  "frequent watery stools (7-8 times daily), severe fatigue",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "None",
+                          "temporal_pattern":  "constant (daily frequent diarrhea)",
+                          "severity":  "severe (led to cardiac arrest)"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS19",
+        "patient_demographics":  {
+                                     "age":  "Unknown",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "Evening of December 9, 2021 (pain); early morning December 10, 2021 (black dots)",
+                          "location":  "Left eye",
+                          "duration":  "Less than 24 hours",
+                          "character":  "Aching pain, black dots (floaters), blurry vision, fog in vision",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Progressive (black dots increasing in number)",
+                          "severity":  "Moderate to severe (reported as \u0027a ton of floaters\u0027)"
+                      },
+        "past_medical_history":  "Recent cataract surgery on left eye (December 9, 2021)",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS20",
+        "patient_demographics":  {
+                                     "age":  "63",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "20 days before admission, after a fall causing right lower leg injury",
+                          "location":  "right lower leg",
+                          "duration":  "20 days",
+                          "character":  "itching, redness, swelling, pain",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "persistent",
+                          "severity":  "severe"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS21",
+        "patient_demographics":  {
+                                     "age":  "72",
+                                     "sex":  "female",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "After a fall",
+                          "location":  "Left shoulder",
+                          "duration":  "Unknown",
+                          "character":  "Pain",
+                          "aggravating_factors":  "Movement, manipulation",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Constant",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS22",
+        "patient_demographics":  {
+                                     "age":  "Unknown (under 60)",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "1 week ago (fever), 3 days ago (chest tightness, fatigue, chest pain)",
+                          "location":  "Chest",
+                          "duration":  "3 days (chest pain, chest tightness, fatigue); 1 week (fever)",
+                          "character":  "Chest tightness, chest pain (unspecified nature)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Intermittent (patient repeatedly reported chest pain)",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "Hypertension grade 3 (very high risk), Type 2 diabetes mellitus",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS23",
+        "patient_demographics":  {
+                                     "age":  "Unknown",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "5 years ago (total course of illness)",
+                          "location":  "Generalized (mental status changes, later respiratory symptoms, edema in lower extremities and face)",
+                          "duration":  "Chronic (5 years of psychiatric symptoms; tuberculosis likely developed during hospitalization)",
+                          "character":  "Insomnia, disorganized speech, behavioral disturbances; later miliary tuberculosis with caseous pneumonia, severe malnutrition, acute respiratory failure",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Chronic with acute deterioration",
+                          "severity":  "Severe (fatal outcome)"
+                      },
+        "past_medical_history":  "Schizophrenia (diagnosed 5 years prior, long-term hospitalization)",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS24",
+        "patient_demographics":  {
+                                     "age":  "61",
+                                     "sex":  "male",
+                                     "occupation":  "Unknown"
+                                 },
+        "old_carts":  {
+                          "onset":  "10 hours before presentation",
+                          "location":  "abdomen (腹痛), bilateral shoulders and back (双侧肩背部不适)",
+                          "duration":  "10 hours",
+                          "character":  "pain (腹痛), shortness of breath (气短不适)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "self-administered Suxiao Jiuxin Wan (速效救心丸) before admission",
+                          "radiation":  "to shoulders and back (双侧肩背部不适)",
+                          "temporal_pattern":  "continuous (持续)",
+                          "severity":  "Unknown"
+                      },
+        "past_medical_history":  "hypertension (高血压), cerebral infarction (脑梗死)",
+        "medication_history":  "Unknown"
+    },
+    {
+        "case_id":  "CAS25",
+        "patient_demographics":  {
+                                     "age":  "37",
+                                     "sex":  "female",
+                                     "occupation":  "校医 (school doctor)"
+                                 },
+        "old_carts":  {
+                          "onset":  "体检发现 (discovered during health checkup)",
+                          "location":  "甲状腺 (thyroid gland)",
+                          "duration":  "慢性 (chronic)",
+                          "character":  "无症状 (asymptomatic)",
+                          "aggravating_factors":  "Unknown",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "持续性 (persistent)",
+                          "severity":  "无症状 (asymptomatic)"
+                      },
+        "past_medical_history":  "Unknown",
+        "medication_history":  "术后服用优甲乐 (levothyroxine) 及钙剂、维生素D"
+    }
+]

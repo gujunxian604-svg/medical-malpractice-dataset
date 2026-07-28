@@ -1,63 +1,45 @@
-# 数据来源与合规说明 (Data Provenance & Compliance)
+# Data Provenance and Compliance Notes
 
-> 本文件说明仓库内数据集的**来源、去标识化方法、上传范围与合规依据**，供论文评审、机构审查（IRB）与数据使用者参考。
-> 注：以下为基于数据特征与通用规范的合规分析，非正式法律意见；正式发表前建议由所在机构 IRB / 法务做最终确认。
+This document records the current provenance and limitations of the dataset. It is a research record, not legal advice or an institutional ethics determination.
 
----
+## Sources and sample composition
 
-## 1. 数据来源
+The repository contains structured records derived from publicly accessible medical-malpractice court judgments from China and the United States.
 
-| 数据集 | 数量 | 来源 | 法律属性 |
-|--------|------|------|----------|
-| 美国医疗过失案例 | 490 例 | CourtListener REST API v4（基于美国各州/联邦法院**公开司法意见** public court opinions） | 美国联邦司法记录原则上属**公共领域**（sealed 案件除外） |
-| 中国医疗损害责任案例 | 612 例 | 中国公开裁判文书（如中国裁判文书网） | 依法公开的司法文书；发布时当事人姓名已作匿名化处理（"张某"式） |
+| Material | Records | Role |
+|---|---:|---|
+| `data/case_database.json` | 25 | Formal curated experimental sample |
+| `data/cn_medical_cases_deidentified.json` | 612 | Supporting Chinese candidate pool |
+| `data/us_cases_deidentified.json` | 490 | Supporting US candidate pool |
+| `archive/legacy/selected_cases.json` | 21 | Legacy intermediate selection; not used formally |
 
----
+The formal sample contains 24 Chinese cases and one US case. Cases were retained according to availability and structural usability; no jurisdictional balance, population representativeness, or cross-country inference is claimed.
 
-## 2. 去标识化方法（可复现，见 `src/deidentify.py`）
+## Data minimisation
 
-- **美国案例**：删除 `full_text` 完整判决书原文（含真实当事人姓名、医生姓名、案号、医院名称），**仅保留 `source_url`** 指向公开 CourtListener 记录。结构化字段（`clinical_facts` / `malpractice_details` / `organ_system_mapping`）本就脱敏，原样保留。
-- **中国案例**：掩码电话号码与身份证号；将未匿名化的当事人称谓（原告/被告/…后紧跟且不含"某"字者）统一替换为"某某"。
+The active model-facing file is `data/formal/case_payloads.json`. It excludes final diagnoses, differential diagnoses, diagnostic-error labels, original case titles, clinician findings used for scoring, ICE inferences, and prewritten patient emotional style.
 
----
+The full curation file retains outcome and citation metadata for audit and scoring preparation. It must not be supplied to either conversational model. Public case titles are retained as provenance metadata and should not be treated as patient dialogue content.
 
-## 3. 仓库上传范围
+Automated de-identification reduces but does not eliminate re-identification risk. Before publication or redistribution, the research team must perform a documented manual review for names, institutions, locations, dates, case identifiers, and rare combinations of clinical facts.
 
-| 文件 | 上传 | 说明 |
-|------|------|------|
-| `data/case_database.json` | ✅ | 25 例 OLD CARTS 结构化精选（含 `final_diagnosis` 金标准，实验用 gold 集） |
-| `data/selected_cases.json` | ✅ | 21 例代表性脱敏精选（不同 schema，无 OLD CARTS 结构） |
-| `data/cn_medical_cases_deidentified.json` | ✅ | 612 例，已去标识化 |
-| `data/us_cases_deidentified.json` | ✅ | 490 例，`full_text` 已删、仅留 `source_url` |
-| `data/cn_medical_cases.json`（原始） | ❌ | 被 `.gitignore` 排除 |
-| `data/us_cases.json`（原始，含 `full_text`） | ❌ | 被 `.gitignore` 排除 |
-| `config.py`（含 API keys） | ❌ | 被 `.gitignore` 排除 |
+## Provenance gaps requiring completion
 
----
+`data/formal/source_manifest.csv` currently records jurisdiction and original title, but stable source URLs or source identifiers are missing for the formal cases. These fields must be completed and checked before manuscript submission so that each case has an auditable derivation path.
 
-## 4. 合规要点
+## Clinical verification
 
-### 美国数据
-- 来源为**公开司法记录**，属公共领域；本仓库**不二次分发**含个人姓名 / 受保护健康信息（PHI）的完整原文，仅提供公开来源的引用链接（`source_url`），符合**数据最小化**原则。
-- 结构化元数据可溯源、可复现（任何研究者可凭 `source_url` 合法访问原始公开记录）。
+Structured fields may contain extraction errors, inferred ICE content, incomplete OLD CARTS elements, or multiple diagnoses in a single outcome string. `data/formal/gold_labels_draft.json` is therefore a review template rather than a frozen gold standard. The formal gold-label file must be approved by qualified clinicians before experimental generation.
 
-### 中国数据
-- 来源为**依法公开的裁判文书**；本仓库进一步做去标识化（掩码直接标识符 + 当事人称谓匿名化），符合《中华人民共和国个人信息保护法》关于**去标识化 / 匿名化**处理的要求。
-- 经去标识化后的信息不再属于可直接识别的个人信息，处理与共享风险极低。
+## Legal and ethical status
 
----
+Public accessibility does not by itself establish unrestricted copyright, database, privacy, or redistribution rights. The repository therefore makes no blanket claim that all source materials share one Creative Commons licence.
 
-## 5. 使用限制与许可建议
+Before release, the research team should obtain institution-appropriate confirmation concerning:
 
-- 数据**仅供学术研究、非商业用途**。
-- 建议配套 `LICENSE`（如 `CC-BY-4.0` 或 `CC0`）。
-- 若研究涉及人类受试者（human subjects），公开司法 / 文书记录通常属 **IRB 豁免（exempt）** 范畴；如机构要求，可说明数据已去标识化且源于公开记录。
+- permission or legal basis for redistribution of each source and derived record;
+- data-protection and re-identification risk;
+- whether ethics review, exemption, or a formal non-human-subject determination is required;
+- the licence covering the team's original database structure and documentation.
 
----
-
-## 6. 复现命令
-
-```bash
-pip install -r requirements.txt
-python src/deidentify.py   # 由原始文件生成 *_deidentified.json
-```
+Code and data licences should be stated separately. A software licence does not automatically apply to source court records or derived data.
