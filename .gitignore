@@ -8,6 +8,17 @@ data/us_cases.json
 data/us_cases_llm.json
 data/cn_medical_cases.json
 
+# Protected reviewer-only records containing source diagnoses and linkage data
+data/review/
+
+# Controlled provenance and source layers: kept locally, never re-added to the public branch
+archive/legacy/selected_cases.json
+data/case_database.json
+data/cn_medical_cases_deidentified.json
+data/us_cases_deidentified.json
+data/formal/gold_labels_draft.json
+data/formal/source_manifest.csv
+
 # Temporary files and logs
 *.log
 *.tmp

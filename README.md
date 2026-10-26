@@ -1,6 +1,8 @@
 # Medical Malpractice Case Dataset
 
-This repository contains the data materials for a clinical dialogue experiment using de-identified medical-malpractice cases derived from publicly accessible court judgments.
+This public repository contains the minimised research layer for a clinical dialogue experiment using medical-malpractice cases recorded as derived from court materials. Source-linked curation, candidate pools, draft diagnoses, and reviewer records are maintained separately as controlled research records. The current model-facing payload remains a **working candidate, not an approved formal input**.
+
+Keeping the repository public does not designate it as the study's final OSF Data resource. Do not link it as OSF Data until the exact public candidate has passed manual privacy, clinical, legal, and institutional review and has a frozen release hash. The public/controlled split is specified in [`docs/LAYERED_DATA_RELEASE_POLICY_2026-10-26.md`](docs/LAYERED_DATA_RELEASE_POLICY_2026-10-26.md).
 
 ## Formal experimental sample
 
@@ -17,26 +19,42 @@ One ophthalmology case (CAS19) falls outside those eight categories and is label
 
 ```text
 data/
-├── case_database.json
-│   Full curation record for the 25 formal cases. Contains outcome information
-│   and MUST NOT be supplied directly to a patient-simulation model.
 ├── formal/
-│   ├── case_payloads.json
-│   │   Model-facing, patient-knowable fields only.
-│   ├── gold_labels_draft.json
-│   │   Draft scoring-side labels. Primary diagnoses and accepted synonyms
-│   │   require clinician verification before the formal experiment.
-│   └── source_manifest.csv
-│       Provenance checklist; stable source identifiers/URLs remain to be added.
-├── cn_medical_cases_deidentified.json
-│   Supporting Chinese candidate pool; not the formal experimental sample.
-└── us_cases_deidentified.json
-    Supporting US candidate pool; not the formal experimental sample.
+│   └── case_payloads.json
+│       English model-facing candidate fields only. The current normalization
+│       remains a draft pending bilingual, clinical, temporal, and privacy review.
+├── public/
+│   ├── case_index.csv
+│   │   Source-minimised case ID, jurisdiction, and provenance-completion status;
+│   │   no direct source key is included.
+│   └── public_layer_manifest.json
+│       Canonical UTF-8/LF public-file hashes and explicit non-authorisation flags.
+├── review/
+│   ├── clinical_review_queue.v1.json
+│   │   Reviewer-only source, payload, risk, and blank adjudication record.
+│   ├── clinical_review_decisions_template.csv
+│   │   Earlier compact summary worksheet; not sufficient for independent review.
+│   ├── clinical_review_independent_template.v2.csv
+│   │   Two blank independent decision rows (R1 and R2) for every case.
+│   ├── clinical_review_adjudication_template.v2.csv
+│   │   One blank final decision/adjudication row for every case.
+│   ├── source_recovery_queue.v1.json
+│   │   Protected 24-case source-recovery queue; never model-facing.
+│   ├── source_recovery_decisions_template.v1.csv
+│   │   Blank legal-identity and clinical-abstraction recovery worksheet.
+│   ├── drafts/
+│   │   Reviewer-only evidence summaries for CAS01-CAS25; not clinical sign-off.
+│   ├── review_artifacts.sha256
+│   │   Current hashes for the protected local review records.
+│   └── protected_layer_manifest.json
+│       Hash-only inventory of controlled local files; ignored by Git.
 
 archive/legacy/
-└── selected_cases.json
-    Legacy 21-case intermediate selection. Not used in the formal experiment.
+└── README.md
+    The legacy selection itself is controlled and untracked.
 ```
+
+The controlled local layer includes `data/case_database.json`, both candidate pools, `data/formal/gold_labels_draft.json`, `data/formal/source_manifest.csv`, and `archive/legacy/selected_cases.json`. These paths are ignored and must not be re-added to the public branch.
 
 ## Leakage prevention
 
@@ -48,7 +66,13 @@ Gold labels must be accessed only after dialogue generation by the scoring and a
 
 ## Required clinical review before data collection
 
-The file `gold_labels_draft.json` intentionally leaves `primary_gold_diagnosis` unset. A qualified clinician must review every case and provide:
+The English normalization of `case_payloads.json` must undergo documented bilingual semantic review against the source-language curation records before it is frozen for generation. Reviewers must verify that no temporal detail, symptom, severity statement, or patient-knowable fact was added, omitted, or clinically altered during translation.
+
+Record the field-level review and whole-file sign-off in the controlled review record. Review evidence is provenance-only and must not enter model context or the public data layer.
+
+The controlled 24 September 2026 readiness audit found that the current candidate is not suitable for formal generation: all 25 reference labels remain unsigned, and every payload requires clinical, temporal, speaker-role, information-sufficiency, or leakage remediation. The 25 case IDs are a fixed candidate roster, not yet a frozen formal input release.
+
+The controlled file `data/formal/gold_labels_draft.json` intentionally leaves `primary_gold_diagnosis` unset. A qualified clinician must review every case and provide:
 
 1. one canonical primary diagnosis;
 2. accepted diagnostic synonyms or equivalent terms;
@@ -56,6 +80,19 @@ The file `gold_labels_draft.json` intentionally leaves `primary_gold_diagnosis` 
 4. confirmation of organ-system and diagnostic-error labels.
 
 After review, save the frozen result as `gold_labels.json`, record the version or commit hash in the protocol, and do not alter it after formal generation begins except through a documented amendment.
+
+## Fail-closed release audit
+
+Prepare and audit the layered public candidate with:
+
+```powershell
+node .\prepare_layered_data_release.mjs
+node .\audit_layer_separation.mjs
+```
+
+The public-layer audit verifies that the six controlled paths are absent from the proposed public Git index and that the public payload/index do not contain the coded direct-identifier patterns. Automated success never grants public-release or formal-generation authority.
+
+Additional source-recovery, clinical-review, and formal-readiness tools operate on the controlled layer and are maintained in the access-controlled study workspace. They are intentionally absent from this public candidate until their own content and dependencies have been reviewed for public release. Their success cannot authorise formal generation.
 
 ## Archived material
 

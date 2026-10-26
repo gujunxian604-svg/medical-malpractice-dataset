@@ -1,0 +1,28 @@
+{
+  "schema_version": "clineval.layered-public-data.v1",
+  "hash_semantics": "sha256 of UTF-8 text after BOM removal and newline normalization to LF",
+  "formal_generation_authorized": false,
+  "public_release_authorized": false,
+  "manual_review_required": true,
+  "case_count": 25,
+  "public_files": [
+    {
+      "path": "data/formal/case_payloads.json",
+      "sha256": "37e7db591a00e3e8738b17a35f5e21cb0c198b649a1268f8256d240515d55ff3",
+      "role": "candidate model-facing clinical abstractions"
+    },
+    {
+      "path": "data/public/case_index.csv",
+      "sha256": "71d87cf1877fb31dd274ba12acff11755777ed1e3348fa41f657f202c9fdb6f9",
+      "role": "source-minimised case and jurisdiction index without direct source keys"
+    }
+  ],
+  "excluded_protected_paths": [
+    "archive/legacy/selected_cases.json",
+    "data/case_database.json",
+    "data/cn_medical_cases_deidentified.json",
+    "data/us_cases_deidentified.json",
+    "data/formal/gold_labels_draft.json",
+    "data/formal/source_manifest.csv"
+  ]
+}
