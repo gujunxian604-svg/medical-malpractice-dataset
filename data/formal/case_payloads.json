@@ -4,20 +4,20 @@
         "patient_demographics":  {
                                      "age":  "Unknown",
                                      "sex":  "female",
-                                     "occupation":  "市民"
+                                     "occupation":  "Unknown"
                                  },
         "old_carts":  {
-                          "onset":  "2016年分娩后逐渐出现，2020年就诊时主诉会阴侧切处肿胀、疼痛不适4年",
-                          "location":  "会阴侧切处 (perineal episiotomy site)",
-                          "duration":  "4年 (4 years)",
-                          "character":  "肿胀、疼痛 (swelling and pain)",
+                          "onset":  "Developed gradually after delivery in 2016; at presentation in 2020, the patient reported swelling, pain, and discomfort at the episiotomy site for four years",
+                          "location":  "Perineal episiotomy site",
+                          "duration":  "Four years",
+                          "character":  "Swelling and pain",
                           "aggravating_factors":  "Unknown",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
-                          "temporal_pattern":  "进行性 (progressive)",
+                          "temporal_pattern":  "Progressive",
                           "severity":  "Unknown"
                       },
-        "past_medical_history":  "2016年巨大儿经会阴侧切顺产",
+        "past_medical_history":  "Vaginal delivery of a macrosomic infant with an episiotomy in 2016",
         "medication_history":  "Unknown"
     },
     {
@@ -29,14 +29,14 @@
                                  },
         "old_carts":  {
                           "onset":  "Unknown (symptoms of low back pain led to initial visit)",
-                          "location":  "Lower back (腰), cauda equina region",
-                          "duration":  "Chronic (post-surgical permanent deficits)",
-                          "character":  "Low back pain (腰痛); post-surgery: inability to urinate/defecate (大、小便不能自解)",
+                          "location":  "Lower back",
+                          "duration":  "Chronic following surgery",
+                          "character":  "Low back pain; after surgery, inability to urinate or defecate spontaneously",
                           "aggravating_factors":  "Unknown",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
                           "temporal_pattern":  "Constant (post-surgery persistent urinary and bowel dysfunction)",
-                          "severity":  "Severe (七级伤残, permanent neurogenic bladder/bowel)"
+                          "severity":  "Severe"
                       },
         "past_medical_history":  "Unknown (no prior conditions mentioned)",
         "medication_history":  "Unknown"
@@ -73,12 +73,12 @@
                           "onset":  "Acute onset after traffic accident",
                           "location":  "Left upper extremity (left elbow and distal humerus)",
                           "duration":  "Chronic, persisting for months post-surgery",
-                          "character":  "Persistent swelling and pain (持续性肿痛) at left elbow",
+                          "character":  "Persistent swelling and pain at the left elbow",
                           "aggravating_factors":  "Movement or weight-bearing on left arm",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
                           "temporal_pattern":  "Constant, worsening over time",
-                          "severity":  "Moderate to severe (based on need for revision surgery)"
+                          "severity":  "Unknown"
                       },
         "past_medical_history":  "Traffic accident causing left humeral distal comminuted fracture",
         "medication_history":  "Unknown"
@@ -130,18 +130,18 @@
         "patient_demographics":  {
                                      "age":  "Unknown",
                                      "sex":  "male",
-                                     "occupation":  "farmer (农民)"
+                                     "occupation":  "farmer"
                                  },
         "old_carts":  {
-                          "onset":  "Unknown (initial surgery for fracture, then chronic osteomyelitis developed postoperatively)",
-                          "location":  "left calcaneus (左跟骨)",
-                          "duration":  "chronic (postoperative, ongoing)",
-                          "character":  "non-healing wound, sinus tract formation (切口愈合不良，窦道形成)",
+                          "onset":  "After surgery for left tibial and calcaneal fractures; the postoperative wound failed to heal",
+                          "location":  "Left calcaneus",
+                          "duration":  "Chronic since surgery",
+                          "character":  "Non-healing wound with sinus tract formation",
                           "aggravating_factors":  "Unknown",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
-                          "temporal_pattern":  "persistent (窦道未愈合)",
-                          "severity":  "severe (十级伤残)"
+                          "temporal_pattern":  "Persistent; the sinus tract did not heal",
+                          "severity":  "Severe"
                       },
         "past_medical_history":  "Left tibial and calcaneal fractures, status post internal fixation",
         "medication_history":  "Unknown"
@@ -185,7 +185,7 @@
                           "temporal_pattern":  "Intermittent (labor pains) then constant (hemorrhage)",
                           "severity":  "Severe (life-threatening hemorrhage, shock)"
                       },
-        "past_medical_history":  "Gravida 6, para 3; multiple pregnancies and abortions; uterine fibroids (较大子宫肌瘤); high-risk factors for uterine rupture (高龄、多次妊娠流产等肌纤维变薄菲薄).",
+        "past_medical_history":  "Gravida 6, para 3; multiple pregnancies and abortions; and a relatively large uterine fibroid",
         "medication_history":  "Unknown"
     },
     {
@@ -199,7 +199,7 @@
                           "onset":  "4 years ago",
                           "location":  "uterus",
                           "duration":  "4 years",
-                          "character":  "uterine fibroids (子宫肌瘤)",
+                          "character":  "Uterine fibroids",
                           "aggravating_factors":  "Unknown",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
@@ -281,14 +281,14 @@
                                  },
         "old_carts":  {
                           "onset":  "5 years ago (recurrent), with acute worsening 2 weeks prior to admission",
-                          "location":  "Chest (胸闷), head (意识障碍)",
+                          "location":  "Chest",
                           "duration":  "5 years (chronic), acute worsening for 2 weeks",
-                          "character":  "Chest tightness (胸闷), altered consciousness (意识障碍)",
+                          "character":  "Chest tightness, shortness of breath, and altered consciousness",
                           "aggravating_factors":  "Unknown",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
                           "temporal_pattern":  "Recurrent episodes over 5 years, with recent persistent worsening",
-                          "severity":  "Severe (led to death)"
+                          "severity":  "Severe"
                       },
         "past_medical_history":  "Coronary artery disease, paroxysmal atrial fibrillation, hypertension (grade 3, very high risk), pneumonia, renal insufficiency, secondary thrombocytopenia",
         "medication_history":  "Unknown"
@@ -323,14 +323,14 @@
                                  },
         "old_carts":  {
                           "onset":  "After continuous infusion treatment for cold",
-                          "location":  "Generalized (全身乏力), throat (咽干), stomach (胃胀满)",
+                          "location":  "Generalized; throat and stomach",
                           "duration":  "Unknown",
-                          "character":  "Weakness, mild dry throat, stomach fullness",
+                          "character":  "Weakness, loss of appetite, mild dry throat, and stomach fullness",
                           "aggravating_factors":  "Unknown",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
                           "temporal_pattern":  "Progressive worsening",
-                          "severity":  "Severe (leading to death)"
+                          "severity":  "Unknown"
                       },
         "past_medical_history":  "Unknown",
         "medication_history":  "Unknown"
@@ -491,37 +491,37 @@
                                  },
         "old_carts":  {
                           "onset":  "10 hours before presentation",
-                          "location":  "abdomen (腹痛), bilateral shoulders and back (双侧肩背部不适)",
+                          "location":  "Abdomen, both shoulders, and back",
                           "duration":  "10 hours",
-                          "character":  "pain (腹痛), shortness of breath (气短不适)",
+                          "character":  "Abdominal pain and shortness of breath",
                           "aggravating_factors":  "Unknown",
-                          "alleviating_factors":  "self-administered Suxiao Jiuxin Wan (速效救心丸) before admission",
-                          "radiation":  "to shoulders and back (双侧肩背部不适)",
-                          "temporal_pattern":  "continuous (持续)",
+                          "alleviating_factors":  "Unknown",
+                          "radiation":  "Unknown",
+                          "temporal_pattern":  "Continuous",
                           "severity":  "Unknown"
                       },
-        "past_medical_history":  "hypertension (高血压), cerebral infarction (脑梗死)",
-        "medication_history":  "Unknown"
+        "past_medical_history":  "Hypertension and cerebral infarction",
+        "medication_history":  "Self-administered Suxiao Jiuxin Wan before presentation; the effect was not recorded"
     },
     {
         "case_id":  "CAS25",
         "patient_demographics":  {
                                      "age":  "37",
                                      "sex":  "female",
-                                     "occupation":  "校医 (school doctor)"
+                                     "occupation":  "school doctor"
                                  },
         "old_carts":  {
-                          "onset":  "体检发现 (discovered during health checkup)",
-                          "location":  "甲状腺 (thyroid gland)",
-                          "duration":  "慢性 (chronic)",
-                          "character":  "无症状 (asymptomatic)",
+                          "onset":  "Discovered during a health checkup",
+                          "location":  "Thyroid gland",
+                          "duration":  "Unknown",
+                          "character":  "Asymptomatic",
                           "aggravating_factors":  "Unknown",
                           "alleviating_factors":  "Unknown",
                           "radiation":  "Unknown",
-                          "temporal_pattern":  "持续性 (persistent)",
-                          "severity":  "无症状 (asymptomatic)"
+                          "temporal_pattern":  "Unknown",
+                          "severity":  "No symptoms reported"
                       },
         "past_medical_history":  "Unknown",
-        "medication_history":  "术后服用优甲乐 (levothyroxine) 及钙剂、维生素D"
+        "medication_history":  "Unknown"
     }
 ]

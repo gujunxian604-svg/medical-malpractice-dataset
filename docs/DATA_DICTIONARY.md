@@ -12,7 +12,9 @@
 
 `Unknown` means that the source-derived structured record does not contain usable information. It must not be replaced by invented facts.
 
-## `data/formal/gold_labels_draft.json`
+## Controlled local file: `data/formal/gold_labels_draft.json`
+
+This scoring-side file is deliberately untracked in the public layer. Its schema is documented here so authorised reviewers can interpret the controlled record without exposing its values.
 
 | Field | Meaning |
 |---|---|
